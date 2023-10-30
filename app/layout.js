@@ -13,13 +13,13 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <link rel="icon" href="/favicon.ico"/>
       <Head>
         {/* Basic meta tags */}
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
         <meta name="description" content={metadata.description}/>
         <title>{metadata.title}</title>
-        <link rel="icon" href="/favicon.ico"/>
 
         {/* Open Graph meta tags */}
         <meta property="og:title" content={metadata.title}/>
