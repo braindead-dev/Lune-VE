@@ -8,6 +8,7 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata = {
   title: 'Lune VE',
   description: 'At Lune, we craft science-backed, health-conscious sleep essentials, uniquely tailored to fit your sleep habits.',
+  favicon: '/favicon.ico',
 }
 
 export default function RootLayout({ children }) {
@@ -17,8 +18,10 @@ export default function RootLayout({ children }) {
         {/* Basic meta tags */}
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        <meta name="description" content={metadata.description}/>
+        
         <title>{metadata.title}</title>
+        <meta name="description" content={metadata.description}/>
+        <link rel="icon" href={metadata.favicon}/>
 
         {/* Open Graph meta tags */}
         <meta property="og:title" content={metadata.title}/>
