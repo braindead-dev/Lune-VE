@@ -10,7 +10,9 @@ export default function Home() {
           <span className="mr-4">lune</span>
           <Image src="/images/canva-logo.png" alt="Canva Logo" width={100} height={100} />
         </div>
+        <div className="font-recoleta text-2xl">for a good night, every night.</div>
       </div>
+      
 
       <div className="mb-32 grid text-center z-10 lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
         <a
