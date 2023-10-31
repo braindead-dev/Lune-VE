@@ -27,7 +27,7 @@ export default function RootLayout({ children }) {
         {/* Assuming you have an image you want to display when the site is shared, add the link below */}
         <meta property="og:url" content="https://lune-ve.com"/> 
         <meta property="og:type" content="website"/>
-        <meta property="og:image" content="https://lune-ve.com/images/lune_og.jpg"/>
+        <meta property="og:image" content="https://lune-ve.com/images/full_card.jpg"/>
         <meta property="og:site_name" content="Lune VE"/>
 
         <meta name="twitter:card" content="summary"/>
@@ -35,7 +35,7 @@ export default function RootLayout({ children }) {
         <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content={metadata.title}/>
         <meta name="twitter:description" content={metadata.description}/>
-        <meta name="twitter:image" content="https://lune-ve.com/images/lune_og.jpg"/>
+        <meta name="twitter:image" content="https://lune-ve.com/images/full_card.jpg"/>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
