@@ -16,7 +16,8 @@ export default function RootLayout({ children }) {
       <Head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-        
+        <meta http-equiv="content-language" content="en"/>
+
         <title>{metadata.title}</title>
         <meta name="description" content={metadata.description}/>
         <link rel="icon" href="/favicon.ico" sizes="any"/>
@@ -26,12 +27,15 @@ export default function RootLayout({ children }) {
         {/* Assuming you have an image you want to display when the site is shared, add the link below */}
         <meta property="og:url" content="https://lune-ve.com"/> 
         <meta property="og:type" content="website"/>
+        <meta property="og:image" content="https://lune-ve.com/images/lune_og.jpg"/>
+        <meta property="og:site_name" content="Lune VE"/>
 
         <meta name="twitter:card" content="summary"/>
         {/* <meta name="twitter:site" content="@yourTwitterHandle"/> */}
+        <meta name="twitter:card" content="summary_large_image"/>
         <meta name="twitter:title" content={metadata.title}/>
         <meta name="twitter:description" content={metadata.description}/>
-        <meta name="twitter:image" content="/images/lune_og.jpg"/>
+        <meta name="twitter:image" content="https://lune-ve.com/images/lune_og.jpg"/>
       </Head>
       <body className={inter.className}>{children}</body>
     </html>
