@@ -1,5 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
+import Card from './components/Card';
 
 export default function Home() {
   return (
@@ -18,54 +19,17 @@ export default function Home() {
       
 
       <div className="mb-32 grid text-center z-10 lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
-        <a
-          href="https://lunesleepsolutions.wixsite.com/lune"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 text-dark-purple"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Shop{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore our official store to discover our newest collection.
-          </p>
-        </a>
-
-        <a
-          href="https://blog.lune-ve.com"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 text-dark-purple"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Blog{' '}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Visit the Lune blog for insights, sleep science, and tailored rest tips.
-          </p>
-        </a>
-
+        <Card href="https://lunesleepsolutions.wixsite.com/lune" title="Shop">
+          Explore our official store to discover our newest collection.
+        </Card>
+        <Card href="https://blog.lune-ve.com" title="Blog">
+          Visit the Lune blog for insights, sleep science, and tailored rest tips.
+        </Card>
         <Link href="/socials">
-          <div className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 text-dark-purple cursor-pointer">
-            <h2 className={`mb-3 text-2xl font-semibold`}>
-              Socials{' '}
-              <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-                -&gt;
-              </span>
-            </h2>
-            <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-              Join the Lune family and follow us on social media!
-            </p>
-          </div>
+          <Card isNextLink title="Socials">
+            Join the Lune family and follow us on social media!
+          </Card>
         </Link>
-
       </div>
     </main>
   )
