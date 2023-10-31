@@ -5,17 +5,22 @@ export default function Socials() {
     return (
         <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
 
-            <div className="z-10 max-w-5xl w-full items-center justify-start font-mono text-sm lg:flex">
-                <p className="fixed left-0 top-0 flex w-full justify-start border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-                To go back&nbsp;
-                    <a
-                        href="javascript:history.back()"
-                        rel="noopener noreferrer"
-                    >  
-                        <code className="font-mono font-bold">click here</code>
-                    </a>
-                </p>
+            <div className="z-10 max-w-5xl w-full items-center justify-start font-semibold text-xl lg:flex">
+                <a
+                    href="javascript:history.back()"
+                    rel="noopener noreferrer"
+                >
+                    <button
+                        className="fixed left-0 top-0 rounded-full border border-gray-300 p-3 flex items-center justify-center bg-gradient-to-b from-zinc-200 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 lg:static lg:rounded-full lg:bg-gray-200 lg:dark:bg-zinc-800/30 font-semibold"
+                        style={{ width: '45px', height: '45px' }}
+                    >
+                        <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
+                            {"<"}-
+                        </span>
+                    </button>
+                </a>
             </div>
+
 
             <div className="flex-grow flex flex-col justify-center mb-8 relative">
                 <div className="absolute inset-0 before:absolute after:absolute after:h-[300px] after:w-[300px] after:translate-x-1/5 after:bg-gradient-conic after:from-yellow-50 after:via-purple-100 after:blur-2xl after:content-[''] z-[-1] whitespace-nowrap"></div>
