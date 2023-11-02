@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import BackButton from '../components/BackButton';
-import Card from '../components/Card';
 
 export default function Socials() {
     return (
