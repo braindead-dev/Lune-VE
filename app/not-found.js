@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import BackButton from './components/BackButton';
+import GenericCards from './components/GenericCards';
 
 export default function Error404() {
   return (
