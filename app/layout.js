@@ -6,7 +6,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
-  title: 'Lune VE',
+  title: 'Lune VE | Discover your sleep type',
   description: 'At Lune, we craft science-backed, health-conscious sleep essentials, uniquely tailored to fit your sleep habits.',
 }
 
