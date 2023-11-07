@@ -13,7 +13,8 @@ module.exports = {
           'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
       },
       fontFamily: {
-        'recoleta': ['Recoleta', 'sans'],  // Add 'Recoleta' to the font family list
+        'recoleta': ['Recoleta', 'sans'],  
+        'garet': ['Garet', 'sans'],  
       },
       colors: {
         'dark-purple': '#4b2285',

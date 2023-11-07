@@ -1,5 +1,6 @@
 "use client"; 
 
+import Image from 'next/image'
 import { useState } from 'react';
 import { HiArrowNarrowLeft, HiArrowNarrowRight } from 'react-icons/hi';
 
@@ -35,6 +36,9 @@ export default function Quiz() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+      
+      <Image className="" src="/images/sheep_logo.png" alt="Sheep Logo" width={60} height={60} />
+
       <div className="w-full bg-gray-200 rounded-full h-2.5 dark:bg-gray-700 mb-4">
         <div className="bg-dark-purple h-2.5 rounded-full" style={{ width: `${progressPercentage}%` }}></div>
       </div>
@@ -42,7 +46,7 @@ export default function Quiz() {
         <div className="text-center font-recoleta text-6xl z-10 mb-3">
           <span>Question {currentQuestionIndex + 1}</span>
         </div>
-        <div className="text-center font-bold text-xl mb-3">
+        <div className="text-center font-garet text-xl mb-3">
           <p>{questions[currentQuestionIndex]}</p>
         </div>
         <div className="flex justify-between w-full max-w-md">
