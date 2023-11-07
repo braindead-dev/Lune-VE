@@ -1,7 +1,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import BackButton from '../components/BackButton';
-import GenericCards from '../components/GenericCards';
+import Card from '../components/Card';
 
 export default function Socials() {
     return (
@@ -19,7 +19,17 @@ export default function Socials() {
                 </div>
             </div>
           
-            <GenericCards></GenericCards>
+            <div className="mb-32 grid text-center z-10 lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-3 lg:text-left">
+                <Card href="https://instagram.com/lune.sleep" title="Instagram">
+                    Bedtime routines, the science of sleep, and our newest products 📸
+                </Card>
+                <Card href="https://tiktok.com/@lune.sleep" title="TikTok">
+                    Behind-the-scenes moments, skits, and quick sleep tips 🤳
+                </Card>
+                <Card href="https://twitter.com/lune_sleep" title="Twitter">
+                    The latest updates, sleep research, and conversations about rest 🧪
+                </Card>
+            </div>
             
         </main>
       )

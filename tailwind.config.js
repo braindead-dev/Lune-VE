@@ -15,6 +15,10 @@ module.exports = {
       fontFamily: {
         'recoleta': ['Recoleta', 'sans'],  // Add 'Recoleta' to the font family list
       },
+      colors: {
+        'dark-purple': '#4b2285',
+        'darker-purple': '#371665',
+      },
     },
   },
   plugins: [],
