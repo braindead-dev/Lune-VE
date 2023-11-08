@@ -1,5 +1,6 @@
 "use client"; 
 
+import { useRouter } from 'next/router';
 import Image from 'next/image'
 import { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
@@ -117,6 +118,7 @@ const DownArrow = () => (
 );
 
 export default function Quiz() {
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState(Array(totalQuestions).fill(''));
   const [bundlePoints, setBundlePoints] = useState({
@@ -162,6 +164,13 @@ export default function Quiz() {
     const highestPoints = Math.max(...Object.values(bundlePoints));
     const bestBundle = Object.keys(bundlePoints).find(key => bundlePoints[key] === highestPoints);
     console.log(`User's best bundle: ${bestBundle} with ${highestPoints} points`);
+    
+    if (typeof window !== "undefined") { // This checks that window is defined, which means we're in the browser
+      localStorage.setItem('bestBundle', JSON.stringify({ bundle: bestBundle, points: highestPoints }));
+      // Redirect to the results page
+      window.location.href = '/results'; // Change '/results' to the path of your results page
+    }
+    
   };
 
   const progressPercentage = (currentQuestionIndex / (totalQuestions - 1)) * 100;
