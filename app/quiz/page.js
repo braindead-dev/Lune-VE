@@ -50,7 +50,7 @@ export default function Quiz() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between pt-6 px-40 text-dark-purple">
+      <main className="flex min-h-screen flex-col items-center justify-between pt-6 px-10 text-dark-purple">
         <ProgressBar percentage={progressPercentage} />
   
         <div className="flex-grow flex flex-col items-center justify-center">
@@ -59,25 +59,23 @@ export default function Quiz() {
           </div>
         </div>
   
-        <div className="w-full px-8 py-4 flex justify-between items-center fixed bottom-0 left-0 right-0 bg-white">
-          <div className="flex flex-col items-center">
-            <button
-              onClick={handleBack}
-              className="text-dark-purple hover:text-darker-purple"
-              disabled={currentQuestionIndex === 0}
-              aria-label="Previous question"
-            >
-              <UpArrow />
-            </button>
-            <button
-              onClick={handleNext}
-              className="text-dark-purple hover:text-darker-purple"
-              disabled={currentQuestionIndex === totalQuestions - 1}
-              aria-label="Next question"
-            >
-              <DownArrow />
-            </button>
-          </div>
+        <div className="w-full px-8 py-4 flex justify-end items-center fixed bottom-0 right-0 bg-white">
+          <button
+            onClick={handleBack}
+            className="text-dark-purple hover:text-darker-purple mr-2"
+            disabled={currentQuestionIndex === 0}
+            aria-label="Previous question"
+          >
+            <UpArrow />
+          </button>
+          <button
+            onClick={handleNext}
+            className="text-dark-purple hover:text-darker-purple"
+            disabled={currentQuestionIndex === totalQuestions - 1}
+            aria-label="Next question"
+          >
+            <DownArrow />
+          </button>
         </div>
       </main>
     </>
