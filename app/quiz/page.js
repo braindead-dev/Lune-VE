@@ -147,13 +147,21 @@ export default function Quiz() {
 
     // Calculate the points for this answer
     if (pointsMapping[e.target.value]) {
-      const { bundle, points } = pointsMapping[e.target.value];
-      setBundlePoints(prevPoints => ({
-        ...prevPoints,
-        [bundle]: prevPoints[bundle] + points,
-      }));
+        const { bundle, points } = pointsMapping[e.target.value];
+        setBundlePoints(prevPoints => ({
+            ...prevPoints,
+            [bundle]: prevPoints[bundle] + points,
+        }));
     }
+
+    // Set a timeout to automatically go to the next question
+    setTimeout(() => {
+        if (currentQuestionIndex < totalQuestions - 1) {
+            setCurrentQuestionIndex(currentQuestionIndex + 1);
+        }
+    }, 500); // Half a second delay
   };
+
 
   const handleSubmit = () => {
     // Calculate the total points and determine the bundle
@@ -170,7 +178,7 @@ export default function Quiz() {
       // Redirect to the results page
       window.location.href = '/results'; // Change '/results' to the path of your results page
     }
-    
+
   };
 
   const progressPercentage = (currentQuestionIndex / (totalQuestions - 1)) * 100;

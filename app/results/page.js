@@ -29,7 +29,7 @@ export default function Results() {
           <span>{resultName || 'Loading...'}</span>
         </div>
         <div className="text-center font-recoleta text-2xl mb-6">
-          {resultPoints ? `${resultPoints} points` : ""} This is the type of sleeper you are!
+          {resultPoints ? `${resultPoints} points` : ""}
         </div>
       </div>
     </main>
