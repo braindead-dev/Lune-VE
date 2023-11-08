@@ -9,9 +9,10 @@ export default function Home() {
     <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
       <BackButton />
       <div className="flex-grow flex flex-col items-center justify-center">
-        <div className="text-center font-recoleta text-8xl z-10 mb-2">
-          <span>Sleep Quiz</span>
-        </div>
+      <div className="text-center font-recoleta whitespace-nowrap text-7xl lg:text-8xl z-10 mb-2">
+        <span>Sleep Quiz</span>
+      </div>
+
         <div className="text-center font-recoleta text-2xl mb-6">
           Discover your sleep type with our short quiz!
         </div>
