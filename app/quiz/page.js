@@ -1,6 +1,5 @@
 "use client"; 
 
-import { useRouter } from 'next/router';
 import Image from 'next/image'
 import { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
@@ -72,36 +71,36 @@ const mcqAnswers = {
 
 const pointsMapping = {
   // Question 3
-  "Racing thoughts or stress": { bundle: "Stress-Relief", points: 2 },
-  "Difficulty feeling relaxed or physically comfortable": { bundle: "Sensory Seeker", points: 2 },
-  "Inability to stay asleep for the whole night": { bundle: "Deep Diver", points: 2 },
-  "Irregular schedule or sleep time": { bundle: "Night Owl", points: 2 },
+  "Racing thoughts or stress": { bundle: "stress-relief", points: 2 },
+  "Difficulty feeling relaxed or physically comfortable": { bundle: "sensory-seeker", points: 2 },
+  "Inability to stay asleep for the whole night": { bundle: "deep-diver", points: 2 },
+  "Irregular schedule or sleep time": { bundle: "night-owl", points: 2 },
 
   // Question 4
-  "After a chill day and a calming routine, free from life’s worries": { bundle: "Stress-Relief", points: 1 },
-  "After a day where I felt physically active and spent": { bundle: "Deep Diver", points: 1 },
-  "Having completed my daily goals, I'm ready for bed at the time I've established for my schedule": { bundle: "Night Owl", points: 1 },
-  "In a carefully curated sleep setting that engages my senses pleasantly, like soft bedding and a hint of my favorite scent": { bundle: "Sensory Seeker", points: 1 },
+  "After a chill day and a calming routine, free from life’s worries": { bundle: "stress-relief", points: 1 },
+  "After a day where I felt physically active and spent": { bundle: "deep-diver", points: 1 },
+  "Having completed my daily goals, I'm ready for bed at the time I've established for my schedule": { bundle: "night-owl", points: 1 },
+  "In a carefully curated sleep setting that engages my senses pleasantly, like soft bedding and a hint of my favorite scent": { bundle: "sensory-seeker", points: 1 },
 
   // Question 5
-  "Completely relaxed and ready for the evening": { bundle: "Stress-Relief", points: -1 },
-  "Usually carry stress and find it hard to unwind": { bundle: "Stress-Relief", points: 1 },
-  "Often feel overwhelmed and it affects my night routine": { bundle: "Stress-Relief", points: 2 },
+  "Completely relaxed and ready for the evening": { bundle: "stress-relief", points: -1 },
+  "Usually carry stress and find it hard to unwind": { bundle: "stress-relief", points: 1 },
+  "Often feel overwhelmed and it affects my night routine": { bundle: "stress-relief", points: 2 },
 
   // Question 6
-  "I sleep deeply and wake up refreshed": { bundle: "Deep Diver", points: -1 },
-  "I rarely feel that I have a deep sleep": { bundle: "Deep Diver", points: 1 },
-  "I struggle to sleep deeply and often wake up tired": { bundle: "Deep Diver", points: 2 },
+  "I sleep deeply and wake up refreshed": { bundle: "deep-diver", points: -1 },
+  "I rarely feel that I have a deep sleep": { bundle: "deep-diver", points: 1 },
+  "I struggle to sleep deeply and often wake up tired": { bundle: "deep-diver", points: 2 },
 
   // Question 7
-  "Very consistent; I go to bed and wake up at the same time daily": { bundle: "Night Owl", points: -1 },
-  "It’s more about when I feel tired rather than a specific schedule or obligations": { bundle: "Night Owl", points: 1 },
-  "I often stay up late working or using electronics and have no regular sleep pattern": { bundle: "Night Owl", points: 2 },
+  "Very consistent; I go to bed and wake up at the same time daily": { bundle: "night-owl", points: -1 },
+  "It’s more about when I feel tired rather than a specific schedule or obligations": { bundle: "night-owl", points: 1 },
+  "I often stay up late working or using electronics and have no regular sleep pattern": { bundle: "night-owl", points: 2 },
 
   // Question 8
-  "Not sensitive; I can sleep in any condition": { bundle: "Sensory Seeker", points: -1 },
-  "Quite sensitive; I prefer certain conditions to be just right for a better chance at sleep": { bundle: "Sensory Seeker", points: 1 },
-  "Very sensitive; I fine-tune my room's settings to match my preferences, as it significantly enhances my sleep quality": { bundle: "Sensory Seeker", points: 2 },
+  "Not sensitive; I can sleep in any condition": { bundle: "sensory-seeker", points: -1 },
+  "Quite sensitive; I prefer certain conditions to be just right for a better chance at sleep": { bundle: "sensory-seeker", points: 1 },
+  "Very sensitive; I fine-tune my room's settings to match my preferences, as it significantly enhances my sleep quality": { bundle: "sensory-seeker", points: 2 },
 
 }
 
@@ -112,10 +111,10 @@ export default function Quiz() {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState(Array(totalQuestions).fill(''));
   const [bundlePoints, setBundlePoints] = useState({
-    "Stress-Relief": 0,
-    "Deep Diver": 0,
-    "Night Owl": 0,
-    "Sensory Seeker": 0,
+    "stress-relief": 0,
+    "deep-diver": 0,
+    "night-owl": 0,
+    "sensory-seeker": 0,
   });
 
   const handleNext = () => {
@@ -151,7 +150,6 @@ export default function Quiz() {
         }
     }, 500); // Half a second delay
   };
-
 
   const handleSubmit = () => {
 
