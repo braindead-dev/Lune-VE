@@ -4,6 +4,8 @@ import { useRouter } from 'next/router';
 import Image from 'next/image'
 import { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
+import QuestionCard from '../components/QuestionCard';
+import NavigationButtons from '../components/NavigationButtons'; 
 import { FiArrowRight } from 'react-icons/fi'; 
 
 const questions = [
@@ -105,18 +107,6 @@ const pointsMapping = {
 
 const totalQuestions = questions.length;
 
-const UpArrow = () => (
-  <svg height="9" width="14" viewBox="0 0 14 9">
-    <path d="M11.996 8.121l1.414-1.414L6.705 0 0 6.707l1.414 1.414 5.291-5.293z" fill="currentColor"></path>
-  </svg>
-);
-
-const DownArrow = () => (
-  <svg height="9" width="14" viewBox="0 0 14 9">
-    <path d="M12.293.293l1.414 1.414L7 8.414.293 1.707 1.707.293 7 5.586z" fill="currentColor"></path>
-  </svg>
-);
-
 export default function Quiz() {
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
@@ -164,14 +154,10 @@ export default function Quiz() {
 
 
   const handleSubmit = () => {
-    // Calculate the total points and determine the bundle
-    console.log("Selected Answers: ", selectedAnswers);
-    console.log("Bundle Points: ", bundlePoints);
 
     // Example of determining the bundle
     const highestPoints = Math.max(...Object.values(bundlePoints));
     const bestBundle = Object.keys(bundlePoints).find(key => bundlePoints[key] === highestPoints);
-    console.log(`User's best bundle: ${bestBundle} with ${highestPoints} points`);
     
     if (typeof window !== "undefined") { // This checks that window is defined, which means we're in the browser
       localStorage.setItem('bestBundle', JSON.stringify({ bundle: bestBundle, points: highestPoints }));
@@ -189,25 +175,13 @@ export default function Quiz() {
         <ProgressBar percentage={progressPercentage} />
   
         <div className="flex-grow flex flex-col items-center justify-center">
-          <div className="text-center text-2xl mb-3">
-            <p>{`${currentQuestionIndex + 1}. ${questions[currentQuestionIndex]}`}</p>
-            <div className="mt-4">
-                {mcqAnswers[currentQuestionIndex].map((answer, index) => (
-                <div key={index} className="text-left">
-                  <label>
-                    <input 
-                      type="radio" 
-                      name={`question-${currentQuestionIndex}`} 
-                      value={answer}
-                      onChange={(e) => handleAnswerChange(e, currentQuestionIndex)}
-                      checked={selectedAnswers[currentQuestionIndex] === answer}
-                    />
-                    {` ${answer}`}
-                  </label>
-                </div>
-              ))}
-            </div>
-          </div>
+          <QuestionCard
+            question={questions[currentQuestionIndex]}
+            answers={mcqAnswers[currentQuestionIndex]}
+            questionIndex={currentQuestionIndex}
+            selectedAnswer={selectedAnswers[currentQuestionIndex]}
+            onAnswerChange={handleAnswerChange}
+          />
         
         {currentQuestionIndex === totalQuestions - 1 && (
             <button
@@ -220,27 +194,12 @@ export default function Quiz() {
           )}
         </div>
   
-        <div className="w-full px-8 py-4 flex justify-end items-center fixed bottom-0 right-0 bg-white">
-          
-          <button
-            onClick={handleBack}
-            className={`${currentQuestionIndex === 0 ? 'text-lighter-purple' : 'text-dark-purple hover:text-darker-purple'} mr-2`}
-            disabled={currentQuestionIndex === 0}
-            aria-label="Previous question"
-          >
-            <UpArrow />
-          </button>
-          <button
-            onClick={handleNext}
-            className={`${currentQuestionIndex === totalQuestions - 1 ? 'text-lighter-purple' : 'text-dark-purple hover:text-darker-purple'}`}
-            disabled={currentQuestionIndex === totalQuestions - 1}
-            aria-label="Next question"
-          >
-            <DownArrow />
-          </button>
-
-
-        </div>
+        <NavigationButtons
+          onBack={handleBack}
+          onNext={handleNext}
+          isFirst={currentQuestionIndex === 0}
+          isLast={currentQuestionIndex === totalQuestions - 1}
+        />
 
       </main>
     </>
