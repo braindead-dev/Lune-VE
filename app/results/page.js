@@ -1,5 +1,6 @@
 "use client"; 
 import BackButton from '../components/BackButton';
+import { FiArrowRight } from 'react-icons/fi';
 
 import { useEffect, useState } from 'react';
 
@@ -46,8 +47,6 @@ export default function Results() {
           bundle: resultData.bundle
         });
 
-        // Clear the bestBundle from local storage since it's no longer needed
-        localStorage.removeItem('bestBundle');
       }
     }
   }, []);
@@ -65,9 +64,18 @@ export default function Results() {
           {result.description || ""}
         </div>
         {/* Display the bundle */}
-        <div className="text-center font-recoleta text-xl">
+        <div className="text-center font-recoleta text-xl mb-5">
           {result.bundle || ""}
         </div>
+
+        <button
+          onClick={() => window.location.href='https://discover.lune-ve.com/soon'}
+          className="flex items-center px-6 py-2 rounded-full text-lg cursor-pointer transition-colors duration-300 ease-in-out text-white bg-dark-purple hover:bg-darker-purple"
+        >
+          Shop Now
+          <FiArrowRight className="ml-2" />
+        </button>
+
       </div>
     </main>
   );
