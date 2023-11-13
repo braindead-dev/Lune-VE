@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import BackButton from '../components/BackButton';
 import Card from '../components/Card';
+import Main from '../components/Main';
 
 export default function Socials() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+        <Main>
 
             <BackButton />
 
@@ -31,6 +32,6 @@ export default function Socials() {
                 </Card>
             </div>
             
-        </main>
+        </Main>
       )
 }

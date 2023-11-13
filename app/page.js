@@ -1,11 +1,12 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import GenericCards from './components/GenericCards';
+import Main from './components/Main';
 
 export default function Home() {
   return (
   
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+    <Main>
 
       <div className="flex-grow flex flex-col justify-center mb-8 relative">
         <div className="absolute inset-0 before:absolute after:absolute after:h-[300px] after:w-[300px] after:translate-x-1/5 after:bg-gradient-conic after:from-yellow-50 after:via-purple-100 after:blur-2xl after:content-[''] z-[-1] whitespace-nowrap"></div>
@@ -20,6 +21,6 @@ export default function Home() {
       
       <GenericCards></GenericCards>
 
-    </main>
+    </Main>
   )
 }

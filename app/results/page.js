@@ -1,5 +1,6 @@
 "use client"; 
 import BackButton from '../components/BackButton';
+import Main from '../components/Main';
 import { FiArrowRight } from 'react-icons/fi';
 
 import { useEffect, useState } from 'react';
@@ -52,7 +53,7 @@ export default function Results() {
   }, []);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+    <Main>
       <BackButton />
       <div className="flex-grow flex flex-col items-center justify-center">
         {/* Display the result type */}
@@ -77,6 +78,6 @@ export default function Results() {
         </button>
 
       </div>
-    </main>
+    </Main>
   );
 }

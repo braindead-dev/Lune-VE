@@ -2,11 +2,12 @@ import Image from 'next/image';
 import Link from 'next/link';
 import BackButton from '../components/BackButton';
 import GenericCards from '../components/GenericCards';
+import Main from '../components/Main';
 import { FiArrowRight } from 'react-icons/fi'; 
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+    <Main>
       <BackButton />
       <div className="flex-grow flex flex-col items-center justify-center">
       <div className="text-center font-recoleta whitespace-nowrap text-7xl lg:text-8xl z-10 mb-2">
@@ -27,6 +28,6 @@ export default function Home() {
         </Link>
         
       </div>
-    </main>
+    </Main>
   )
 }

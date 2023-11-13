@@ -4,7 +4,8 @@ import Image from 'next/image'
 import { useState } from 'react';
 import ProgressBar from '../components/ProgressBar';
 import QuestionCard from '../components/QuestionCard';
-import NavigationButtons from '../components/NavigationButtons'; 
+import NavigationButtons from '../components/NavigationButtons';
+import Main from '../components/Main';
 import { FiArrowRight } from 'react-icons/fi'; 
 
 const questions = [
@@ -169,7 +170,7 @@ export default function Quiz() {
 
   return (
     <>
-      <main className="flex min-h-screen flex-col items-center justify-between pt-6 px-10 text-dark-purple">
+      <Main>
         <ProgressBar percentage={progressPercentage} />
   
         <div className="flex-grow flex flex-col items-center justify-center">
@@ -199,7 +200,7 @@ export default function Quiz() {
           isLast={currentQuestionIndex === totalQuestions - 1}
         />
 
-      </main>
+      </Main>
     </>
   );
 

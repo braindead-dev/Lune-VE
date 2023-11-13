@@ -2,10 +2,11 @@ import Image from 'next/image'
 import Link from 'next/link'
 import BackButton from '../components/BackButton';
 import GenericCards from '../components/GenericCards';
+import Main from '../components/Main';
 
 export default function Soon() {
     return (
-        <main className="flex min-h-screen flex-col items-center justify-between p-24 text-dark-purple">
+        <Main>
           
           <BackButton/>
     
@@ -22,6 +23,6 @@ export default function Soon() {
     
           <GenericCards></GenericCards>
           
-        </main>
+        </Main>
       )
 }
