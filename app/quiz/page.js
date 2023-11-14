@@ -170,7 +170,7 @@ export default function Quiz() {
 
   return (
     <>
-      <Main>
+      <main className="flex min-h-screen flex-col items-center justify-between pt-6 px-10 text-dark-purple">
         <ProgressBar percentage={progressPercentage} />
   
         <div className="flex-grow flex flex-col items-center justify-center">
@@ -200,7 +200,7 @@ export default function Quiz() {
           isLast={currentQuestionIndex === totalQuestions - 1}
         />
 
-      </Main>
+      </main>
     </>
   );
 

@@ -6,7 +6,7 @@ export default function QuestionCard({ question, answers, questionIndex, selecte
       <div className="w-full md:max-w-xl text-center text-2xl mb-2 px-4">
         <p>{`${questionIndex + 1}. ${question}`}</p>
       </div>
-      <div className="w-full md:max-w-md mt-1 mb-2">
+      <div className="w-full md:max-w-md mt-1">
         <AnswerOptions 
           answers={answers} 
           questionIndex={questionIndex} 
