@@ -220,7 +220,7 @@ export default function Quiz() {
           {currentQuestionIndex === totalQuestions - 1 && (
             <button
               onClick={handleSubmit}
-              className="flex items-center px-6 py-2 rounded-full text-lg cursor-pointer transition-colors duration-300 ease-in-out text-white bg-dark-purple hover:bg-darker-purple"
+              className="mt-4 flex items-center px-6 py-2 rounded-full text-lg cursor-pointer transition-colors duration-300 ease-in-out text-white bg-dark-purple hover:bg-darker-purple"
             >
               Submit
               <FiArrowRight className="ml-2" />
