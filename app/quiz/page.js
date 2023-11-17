@@ -188,17 +188,17 @@ export default function Quiz() {
     const bestBundle = Object.keys(bundlePoints).find(
       (key) => bundlePoints[key] === highestPoints
     );
-
+  
     if (typeof window !== "undefined") {
       // This checks that window is defined, which means we're in the browser
       localStorage.setItem(
         "bestBundle",
         JSON.stringify({ bundle: bestBundle, points: highestPoints })
       );
-      // Redirect to the results page
-      window.location.href = "/results"; // Change '/results' to the path of your results page
+      // Redirect to the specific result page
+      window.location.href = `https://lune-ve.com/${bestBundle}`;
     }
-  };
+  };  
 
   const progressPercentage =
     (currentQuestionIndex / (totalQuestions - 1)) * 100;
