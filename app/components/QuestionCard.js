@@ -2,7 +2,7 @@ import AnswerOptions from './AnswerOptions';
 
 export default function QuestionCard({ question, answers, questionIndex, selectedAnswer, onAnswerChange }) {
   return (
-    <div className="flex flex-col items-center">
+    <div className={`flex flex-col items-center ${animationState === 'in' ? 'animate-fadeIn' : 'animate-fadeOut'}`}>
       <div className="w-full md:max-w-xl text-center text-2xl mb-2 px-4">
         <p>{`${questionIndex + 1}. ${question}`}</p>
       </div>

@@ -137,6 +137,9 @@ const pointsMapping = {
 const totalQuestions = questions.length;
 
 export default function Quiz() {
+
+  const [error, setError] = useState("");
+
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [selectedAnswers, setSelectedAnswers] = useState(
     Array(totalQuestions).fill("")
@@ -149,6 +152,11 @@ export default function Quiz() {
   });
 
   const handleNext = () => {
+    if (selectedAnswers[currentQuestionIndex] === "") {
+      setError("This question is required *");
+      return;
+    }
+    setError("");
     if (currentQuestionIndex < totalQuestions - 1) {
       setCurrentQuestionIndex(currentQuestionIndex + 1);
     }
@@ -164,6 +172,9 @@ export default function Quiz() {
     const newAnswers = [...selectedAnswers];
     newAnswers[index] = e.target.value;
     setSelectedAnswers(newAnswers);
+
+    // Clear the error message upon selecting an answer
+    setError("");
 
     // Calculate the points for this answer
     if (pointsMapping[e.target.value]) {
@@ -182,7 +193,14 @@ export default function Quiz() {
     }, 500); // Half a second delay
   };
 
+
   const handleSubmit = () => {
+    if (selectedAnswers[currentQuestionIndex] === "") {
+      setError("This question is required *");
+      return;
+    }
+    setError("");
+
     // Example of determining the bundle
     const highestPoints = Math.max(...Object.values(bundlePoints));
     const bestBundle = Object.keys(bundlePoints).find(
@@ -209,6 +227,7 @@ export default function Quiz() {
         <ProgressBar percentage={progressPercentage} />
 
         <div className="flex-grow flex flex-col items-center justify-center">
+          
           <QuestionCard
             question={questions[currentQuestionIndex]}
             answers={mcqAnswers[currentQuestionIndex]}
@@ -216,6 +235,8 @@ export default function Quiz() {
             selectedAnswer={selectedAnswers[currentQuestionIndex]}
             onAnswerChange={handleAnswerChange}
           />
+
+          {error && <p className="mt-3 text-red-500">{error}</p>}
 
           {currentQuestionIndex === totalQuestions - 1 && (
             <button
