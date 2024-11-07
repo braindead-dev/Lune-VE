@@ -67,7 +67,7 @@ For team members looking to contribute:
 Please ensure to update tests as appropriate and maintain the code quality and standards.
 
 ## Support
-For any issues or inquiries, please open an issue or contact us at lunesleepsolutions@gmail.com.
+This project is no longer maintained as this project was built for the 2023-2024 school year, but you can reach me at contact@henrywa[.]ng if you have any questions.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
