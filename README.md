@@ -67,7 +67,7 @@ For team members looking to contribute:
 Please ensure to update tests as appropriate and maintain the code quality and standards.
 
 ## Support
-This project is no longer maintained as this project was built for the 2023-2024 school year, but you can reach me at contact@henrywa[.]ng if you have any questions.
+This project is no longer maintained as it was made for a Virtual Enterprise class in the 2023-2024 school year, but you can reach me at contact@henrywa[.]ng if you have any questions.
 
 ## License
 This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
