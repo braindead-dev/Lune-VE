@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import React, { useState } from 'react';
 import ProgressBar from "../components/ProgressBar";
 import QuestionCard from "../components/QuestionCard";
 import NavigationButtons from "../components/NavigationButtons";
@@ -138,12 +138,24 @@ const totalQuestions = questions.length;
 
 export default function Quiz() {
 
+  const [isExiting, setIsExiting] = useState(false);
+
   const [error, setError] = useState("");
 
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
+  const [nextQuestionIndex, setNextQuestionIndex] = useState(null)
   const [selectedAnswers, setSelectedAnswers] = useState(
     Array(totalQuestions).fill("")
   );
+
+  const changeQuestion = () => {
+    setIsExiting(false);
+    if (nextQuestionIndex !== null) {
+      setCurrentQuestionIndex(nextQuestionIndex);
+      setNextQuestionIndex(null);
+    }
+  };
+
   const [bundlePoints, setBundlePoints] = useState({
     "stress-relief": 0,
     "deep-diver": 0,
@@ -158,15 +170,24 @@ export default function Quiz() {
     }
     setError("");
     if (currentQuestionIndex < totalQuestions - 1) {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      navigateQuestion(currentQuestionIndex + 1);
     }
   };
-
+  
   const handleBack = () => {
     if (currentQuestionIndex > 0) {
-      setCurrentQuestionIndex(currentQuestionIndex - 1);
+      navigateQuestion(currentQuestionIndex - 1);
     }
+  };  
+
+  const navigateQuestion = (newIndex) => {
+    setIsExiting(true);
+    setTimeout(() => {
+      setCurrentQuestionIndex(newIndex);
+      setIsExiting(false);
+    }, 500); // Adjust the timeout to match your fade-out animation duration
   };
+
 
   const handleAnswerChange = (e, index) => {
     const newAnswers = [...selectedAnswers];
@@ -234,6 +255,7 @@ export default function Quiz() {
             questionIndex={currentQuestionIndex}
             selectedAnswer={selectedAnswers[currentQuestionIndex]}
             onAnswerChange={handleAnswerChange}
+            isExiting={isExiting}
           />
 
           {error && <p className="mt-3 text-red-500">{error}</p>}
